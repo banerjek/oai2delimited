@@ -8,6 +8,10 @@
 		<xsl:text>&#x9;</xsl:text>
 		<xsl:value-of select="date" />
 		<xsl:text>&#x9;</xsl:text>
+		<xsl:value-of select="description" />
+		<xsl:text>&#x9;</xsl:text>
+		<xsl:value-of select="publisher" />
+		<xsl:text>&#x9;</xsl:text>
 		<xsl:text>&#xA;</xsl:text>
 	</xsl:for-each>
 </xsl:template>
@@ -23,9 +27,7 @@ is processed twice to preserve order -->
 		<xsl:text>&#x9;</xsl:text>
 
 	<xsl:for-each select=".">
-		<xsl:if test="starts-with(., 'https://digitalcollections.ohsu.edu/files/original/')">
 			<xsl:value-of select="substring-after(., 'https://digitalcollections.ohsu.edu/files/original/')" />
-		</xsl:if>
 	</xsl:for-each>
 
 </xsl:template>
