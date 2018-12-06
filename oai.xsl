@@ -4,8 +4,8 @@
   <xsl:for-each select="record/metadata">
     <xsl:apply-templates select="identifier"/>
     <xsl:text>&#x9;</xsl:text>
-    <xsl:apply-templates select="subject" />
-    <xsl:text>&#x9;</xsl:text>
+    <!-- <xsl:apply-templates select="subject" />
+    <xsl:text>&#x9;</xsl:text> -->
     <xsl:value-of select="file" />
     <xsl:text>&#x9;</xsl:text>
     <xsl:value-of select="title" />
@@ -16,7 +16,7 @@
     <xsl:text>&#x9;</xsl:text>
     <xsl:value-of select="publisher" />
     <xsl:text>&#x9;</xsl:text>
-    <xsl:apply-templates select="description" />
+    <!-- <xsl:apply-templates select="description" /> -->
     <xsl:text>&#x9;</xsl:text>
     <xsl:text>&#xA;</xsl:text>
   </xsl:for-each>
@@ -27,7 +27,6 @@ is processed twice to preserve order -->
   <xsl:for-each select=".">
     <xsl:if test="starts-with(., 'doi:')">
       <xsl:value-of select="." />
-      <xsl:text>&#x9;</xsl:text>
     </xsl:if>
   </xsl:for-each>
 
